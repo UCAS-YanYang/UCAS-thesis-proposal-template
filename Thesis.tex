@@ -98,16 +98,13 @@
         \linespread{1.25}\selectfont 
         \def\arraystretch{1.3} % 稍微调紧行距
         
-        % --- 【对齐魔法】 ---
-        % @{} 去掉列默认间距
-        % 每一行的下划线前都加了 \hspace*{-2pt} 强制回缩一点点，消除视觉缝隙
         
         \begin{tabular}{@{}l@{}l @{\hspace{15pt}} l@{}l@{}} 
-            % --- 报告题目 (总宽400 = 65 + 335) ---
+            % --- 报告题目 ---
             \makebox[65pt][s]{\zihao{4}\bfseries\sffamily 报告题目} & 
             \multicolumn{3}{@{}l@{}}{\hspace*{-40pt}\ulenhance[1.2pt]{\ulextend[335pt]{\zihao{4}\bfseries\sffamily \ucas@value@ch@reporttitle}}} \\
             
-            % --- 姓名 + 学号 (总宽400 = 65 + 90 + 15 + 40 + 190) ---
+            % --- 姓名 + 学号 ---
             \makebox[65pt][s]{\zihao{4}\bfseries\sffamily 学生姓名} & 
             \hspace*{-40pt}\ulenhance[1.2pt]{\ulextend[90pt]{\zihao{4}\bfseries\sffamily \ucas@value@ch@author}} &
             \makebox[40pt][s]{\zihao{4}\bfseries\sffamily 学号} & 
@@ -119,7 +116,7 @@
             \makebox[40pt][s]{\zihao{4}\bfseries\sffamily 职称} & 
             \hspace*{-2pt}\ulenhance[1.2pt]{\ulextend[190pt]{\zihao{4}\bfseries\sffamily \ucas@value@ch@advisorrank}} \\
             
-            % --- 单行项目 (总宽400 = 65 + 335) ---
+            % --- 单行项目 ---
             \makebox[65pt][s]{\zihao{4}\bfseries\sffamily 学位类别} & 
             \multicolumn{3}{@{}l@{}}{\hspace*{-40pt}\ulenhance[1.2pt]{\ulextend[335pt]{\zihao{4}\bfseries\sffamily \ucas@value@ch@degree}}} \\
             
@@ -129,8 +126,7 @@
             \makebox[65pt][s]{\zihao{4}\bfseries\sffamily 研究方向} & 
             \multicolumn{3}{@{}l@{}}{\hspace*{-40pt}\ulenhance[1.2pt]{\ulextend[335pt]{\zihao{4}\bfseries\sffamily \ucas@value@ch@researcharea}}} \\
             
-            % --- 特殊处理：研究所 (总宽400 = 110 + 290) ---
-            % 这里的标签给到了 110pt，足以容纳 "研究所（院系）" 7个字
+            % --- 研究所  ---
             \makebox[110pt][s]{\zihao{4}\bfseries\sffamily 研究所（院系）} & 
             \multicolumn{3}{@{}l@{}}{\hspace*{-2pt}\ulenhance[1.2pt]{\ulextend[295pt]{\zihao{4}\bfseries\sffamily \ucas@value@ch@institute}}} \\
             
@@ -162,7 +158,7 @@
 \input{Tex/Chap_Guide}
 
 \section{选题的背景及意义}
-高维数据背后的核心变量，往往天然具备低维或近似低维的内蕴结构\citep{udell2019bigdata_rank}。
+引一个参考文献试一下\citep{udell2019bigdata_rank}。
 
 
 
