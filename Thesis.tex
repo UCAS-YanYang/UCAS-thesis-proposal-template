@@ -1,0 +1,180 @@
+%---------------------------------------------------------------------------%
+%-                                                                         -%
+%-                           LaTeX Template                                -%
+%-                                                                         -%
+%---------------------------------------------------------------------------%
+%- Copyright (C) Huangrui Mo <huangrui.mo@gmail.com> 
+%- This is free software: you can redistribute it and/or modify it
+%- under the terms of the GNU General Public License as published by
+%- the Free Software Foundation, either version 3 of the License, or
+%- (at your option) any later version.
+%---------------------------------------------------------------------------%
+%->> Document class declaration
+%---------------------------------------------------------------------------%
+\documentclass[twoside]{Style/ucasthesis}%
+%- Multiple optional arguments:
+%- [<oneside|twoside|print>]% oneside eprint, twoside eprint, or paper print
+%- [fontset=<adobe|none|...>]% specify font set instead of automatic detection
+%- [scheme=plain]% thesis writing of international students
+%- [draftversion]% show draft version information
+%- [standard options for ctex book class: draft|paper size|font size|...]%
+%---------------------------------------------------------------------------%
+%->> Document settings
+%---------------------------------------------------------------------------%
+\usepackage{caption}
+\usepackage[super,numbers, list,tikz,table,math]{Style/artratex}
+%- usage: \usepackage[option1,option2,...,optionN]{artratex}
+%- Multiple optional arguments:
+%- [bibtex|biber]% set bibliography processor and package
+%- [<numbers|super|authoryear|alpha>]% set citation and reference style
+%- <numbers>: textual: Jones [1]; parenthetical: [1]
+%- <super>: textual: Jones superscript [1]; parenthetical: superscript [1]
+%- <authoryear>: textual: Jones (1995); parenthetical: (Jones, 1995)
+%- <alpha>: textual: not available; parenthetical: [Jon95]
+%- [geometry]% reconfigure page layout via geometry package
+%- [lscape]% provide landscape layout environment
+%- [xhf]% disable header and footer via fancyhdr package
+%- [color]% provide color support via xcolor package
+%- [background]% enable page background
+%- [tikz]% provide complex diagrams via tikz package
+%- [table]% provide complex tables via ctable package
+%- [list]% provide enhanced list environments for algorithm and coding
+%- [math]% enable some extra math packages
+%- [xlink]% disable link colors
+\usepackage{Style/artracom}% user defined commands
+%---------------------------------------------------------------------------%
+
+
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+
+
+%---------------------------------------------------------------------------%
+%->> 1. 定义部分：必须在 \makeatletter 内部
+%---------------------------------------------------------------------------%
+\makeatletter
+% 定义新字段（必须在这里定义，否则 @ 无法识别）
+\newcommand{\reporttitle}[1]{\def\ucas@value@ch@reporttitle{#1}}
+\newcommand{\studentid}[1]{\def\ucas@value@ch@studentid{#1}}
+\newcommand{\advisorrank}[1]{\def\ucas@value@ch@advisorrank{#1}}
+\newcommand{\researcharea}[1]{\def\ucas@value@ch@researcharea{#1}}
+
+%---------------------------------------------------------------------------%
+%->> 填写信息
+%---------------------------------------------------------------------------%
+\confidential{}
+\schoollogo[scale=0.095]{ucas_logo} 
+\reporttitle{论文标题}
+\author{石宇奇}
+\studentid{2022xxxxxxxx}
+\advisor{林丹}
+\advisorrank{研究员}
+\degree{羽毛球博士}
+\major{羽毛球}
+\researcharea{}
+\institute{北京鸟巢}
+\date{2026年3月}
+
+%---------------------------------------------------------------------------%
+%---------------------------------------------------------------------------%
+\renewcommand{\maketitle@xpdc}{%
+    \cleardoublepage
+    \thispagestyle{empty}
+    \begin{center}
+        \linespread{1.6}
+
+        \vspace*{20pt}
+        {\ucas@value@ch@schoollogo} 
+        
+        \vspace*{\stretch{1}}
+        {\zihao{1}\sffamily 研究生学位论文开题报告}
+        \vspace*{\stretch{5}}
+
+        % --- 纯居中下划线 ---
+        \renewcommand{\ulextend}[2][350pt]{%
+            \hbox to ##1{\hfill ##2\hfill}%
+        }
+
+        \linespread{1.25}\selectfont 
+        \def\arraystretch{1.3} % 稍微调紧行距
+        
+        % --- 【对齐魔法】 ---
+        % @{} 去掉列默认间距
+        % 每一行的下划线前都加了 \hspace*{-2pt} 强制回缩一点点，消除视觉缝隙
+        
+        \begin{tabular}{@{}l@{}l @{\hspace{15pt}} l@{}l@{}} 
+            % --- 报告题目 (总宽400 = 65 + 335) ---
+            \makebox[65pt][s]{\zihao{4}\bfseries\sffamily 报告题目} & 
+            \multicolumn{3}{@{}l@{}}{\hspace*{-40pt}\ulenhance[1.2pt]{\ulextend[335pt]{\zihao{4}\bfseries\sffamily \ucas@value@ch@reporttitle}}} \\
+            
+            % --- 姓名 + 学号 (总宽400 = 65 + 90 + 15 + 40 + 190) ---
+            \makebox[65pt][s]{\zihao{4}\bfseries\sffamily 学生姓名} & 
+            \hspace*{-40pt}\ulenhance[1.2pt]{\ulextend[90pt]{\zihao{4}\bfseries\sffamily \ucas@value@ch@author}} &
+            \makebox[40pt][s]{\zihao{4}\bfseries\sffamily 学号} & 
+            \hspace*{-2pt}\ulenhance[1.2pt]{\ulextend[190pt]{\zihao{4}\bfseries\sffamily \ucas@value@ch@studentid}} \\
+            
+            % --- 导师 + 职称 ---
+            \makebox[65pt][s]{\zihao{4}\bfseries\sffamily 指导教师} & 
+            \hspace*{-40pt}\ulenhance[1.2pt]{\ulextend[90pt]{\zihao{4}\bfseries\sffamily \ucas@value@ch@advisor}} &
+            \makebox[40pt][s]{\zihao{4}\bfseries\sffamily 职称} & 
+            \hspace*{-2pt}\ulenhance[1.2pt]{\ulextend[190pt]{\zihao{4}\bfseries\sffamily \ucas@value@ch@advisorrank}} \\
+            
+            % --- 单行项目 (总宽400 = 65 + 335) ---
+            \makebox[65pt][s]{\zihao{4}\bfseries\sffamily 学位类别} & 
+            \multicolumn{3}{@{}l@{}}{\hspace*{-40pt}\ulenhance[1.2pt]{\ulextend[335pt]{\zihao{4}\bfseries\sffamily \ucas@value@ch@degree}}} \\
+            
+            \makebox[65pt][s]{\zihao{4}\bfseries\sffamily 学科专业} & 
+            \multicolumn{3}{@{}l@{}}{\hspace*{-40pt}\ulenhance[1.2pt]{\ulextend[335pt]{\zihao{4}\bfseries\sffamily \ucas@value@ch@major}}} \\
+            
+            \makebox[65pt][s]{\zihao{4}\bfseries\sffamily 研究方向} & 
+            \multicolumn{3}{@{}l@{}}{\hspace*{-40pt}\ulenhance[1.2pt]{\ulextend[335pt]{\zihao{4}\bfseries\sffamily \ucas@value@ch@researcharea}}} \\
+            
+            % --- 特殊处理：研究所 (总宽400 = 110 + 290) ---
+            % 这里的标签给到了 110pt，足以容纳 "研究所（院系）" 7个字
+            \makebox[110pt][s]{\zihao{4}\bfseries\sffamily 研究所（院系）} & 
+            \multicolumn{3}{@{}l@{}}{\hspace*{-2pt}\ulenhance[1.2pt]{\ulextend[295pt]{\zihao{4}\bfseries\sffamily \ucas@value@ch@institute}}} \\
+            
+            \makebox[65pt][s]{\zihao{4}\bfseries\sffamily 填表日期} & 
+            \multicolumn{3}{@{}l@{}}{\hspace*{-40pt}\ulenhance[1.2pt]{\ulextend[335pt]{\zihao{4}\bfseries\sffamily \ucas@value@ch@date}}} \\
+        \end{tabular}
+
+        \vspace*{\stretch{1}}
+        {\zihao{3}\bfseries\sffamily 中国科学院大学制}
+        \vspace*{\stretch{1}}
+    \end{center}
+    \clearpage
+}
+\makeatother
+
+\DEGREE{Doctor}
+
+\renewcommand{\headrulewidth}{0pt}
+\begin{document}
+
+\pagestyle{plain}
+
+%-> Frontmatter: title page
+\frontmatter
+\pagenumbering{arabic}
+\maketitle % 生成封面
+
+\input{Tex/Chap_UCAS.tex}
+\input{Tex/Chap_Guide}
+
+\section{选题的背景及意义}
+高维数据背后的核心变量，往往天然具备低维或近似低维的内蕴结构\citep{udell2019bigdata_rank}。
+
+
+
+
+\intotoc*{\cleardoublepage}{\bibname}% add link to toc
+\artxifstreq{\artxbib}{bibtex}{% enable bibtex
+    \bibliography{Biblio/ref}% bibliography
+}{%
+    \printbibliography% bibliography
+}
+
+
+\end{document}
+%---------------------------------------------------------------------------%
+
