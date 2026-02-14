@@ -48,6 +48,14 @@
 \renewcommand{\thesection}{\arabic{section}}
 \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
 
+\makeatletter
+\@addtoreset{equation}{section} % 让公式编号随 Section 清零
+\@addtoreset{figure}{section}   % 让图片编号随 Section 清零
+\@addtoreset{table}{section}    % 让表格编号随 Section 清零
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\renewcommand{\thetable}{\thesection.\arabic{table}}
+\makeatother
 
 %---------------------------------------------------------------------------%
 %->> 1. 定义部分：必须在 \makeatletter 内部
@@ -159,6 +167,11 @@
 
 \section{选题的背景及意义}
 引一个参考文献试一下\citep{udell2019bigdata_rank}。
+
+写一个公式试一下
+\begin{equation}
+    A = B + C
+\end{equation}
 
 
 
