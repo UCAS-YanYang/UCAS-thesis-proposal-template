@@ -71,7 +71,7 @@
 %->> 填写信息
 %---------------------------------------------------------------------------%
 \confidential{}
-\schoollogo[scale=0.095]{ucas_logo} 
+\schoollogo[scale=0.18]{ucas_logo} 
 \reporttitle{论文标题}
 \author{石宇奇}
 \studentid{2022xxxxxxxx}
@@ -81,7 +81,7 @@
 \major{羽毛球}
 \researcharea{}
 \institute{北京鸟巢}
-\date{2026年3月}
+\date{2026 年\ 3 月}
 
 %---------------------------------------------------------------------------%
 %---------------------------------------------------------------------------%
@@ -95,7 +95,8 @@
         {\ucas@value@ch@schoollogo} 
         
         \vspace*{\stretch{1}}
-        {\zihao{1}\sffamily 研究生学位论文开题报告}
+        \vspace{-4mm}
+        {\zihao{1}\bfseries \songti 研究生学位论文开题报告}
         \vspace*{\stretch{5}}
 
         % --- 纯居中下划线 ---
@@ -104,46 +105,46 @@
         }
 
         \linespread{1.25}\selectfont 
-        \def\arraystretch{1.3} % 稍微调紧行距
+        \def\arraystretch{1.6} 
         
         
         \begin{tabular}{@{}l@{}l @{\hspace{15pt}} l@{}l@{}} 
             % --- 报告题目 ---
-            \makebox[65pt][s]{\zihao{4}\bfseries\sffamily 报告题目} & 
-            \multicolumn{3}{@{}l@{}}{\hspace*{-40pt}\ulenhance[1.2pt]{\ulextend[335pt]{\zihao{4}\bfseries\sffamily \ucas@value@ch@reporttitle}}} \\
+            \makebox[65pt][s]{\zihao{-3}\bfseries\songti 报告题目} & 
+            \multicolumn{3}{@{}l@{}}{\hspace*{-40pt}\ulenhance[1.2pt]{\ulextend[335pt]{\zihao{-3}\bfseries\songti \ucas@value@ch@reporttitle}}} \\
             
             % --- 姓名 + 学号 ---
-            \makebox[65pt][s]{\zihao{4}\bfseries\sffamily 学生姓名} & 
-            \hspace*{-40pt}\ulenhance[1.2pt]{\ulextend[90pt]{\zihao{4}\bfseries\sffamily \ucas@value@ch@author}} &
-            \makebox[40pt][s]{\zihao{4}\bfseries\sffamily 学号} & 
-            \hspace*{-2pt}\ulenhance[1.2pt]{\ulextend[190pt]{\zihao{4}\bfseries\sffamily \ucas@value@ch@studentid}} \\
+            \makebox[65pt][s]{\zihao{-3}\bfseries\songti 学生姓名} & 
+            \hspace*{-40pt}\ulenhance[1.2pt]{\ulextend[90pt]{\zihao{-3}\bfseries\songti \ucas@value@ch@author}} &
+            \makebox[40pt][s]{\zihao{-3}\bfseries\songti 学号} & 
+            \hspace*{-2pt}\ulenhance[1.2pt]{\ulextend[190pt]{\zihao{-3}\bfseries\songti \ucas@value@ch@studentid}} \\
             
             % --- 导师 + 职称 ---
-            \makebox[65pt][s]{\zihao{4}\bfseries\sffamily 指导教师} & 
-            \hspace*{-40pt}\ulenhance[1.2pt]{\ulextend[90pt]{\zihao{4}\bfseries\sffamily \ucas@value@ch@advisor}} &
-            \makebox[40pt][s]{\zihao{4}\bfseries\sffamily 职称} & 
-            \hspace*{-2pt}\ulenhance[1.2pt]{\ulextend[190pt]{\zihao{4}\bfseries\sffamily \ucas@value@ch@advisorrank}} \\
+            \makebox[65pt][s]{\zihao{-3}\bfseries\songti 指导教师} & 
+            \hspace*{-40pt}\ulenhance[1.2pt]{\ulextend[90pt]{\zihao{-3}\bfseries\songti \ucas@value@ch@advisor}} &
+            \makebox[40pt][s]{\zihao{-3}\bfseries\songti 职称} & 
+            \hspace*{-2pt}\ulenhance[1.2pt]{\ulextend[190pt]{\zihao{-3}\bfseries\songti \ucas@value@ch@advisorrank}} \\
             
             % --- 单行项目 ---
-            \makebox[65pt][s]{\zihao{4}\bfseries\sffamily 学位类别} & 
-            \multicolumn{3}{@{}l@{}}{\hspace*{-40pt}\ulenhance[1.2pt]{\ulextend[335pt]{\zihao{4}\bfseries\sffamily \ucas@value@ch@degree}}} \\
+            \makebox[65pt][s]{\zihao{-3}\bfseries\songti 学位类别} & 
+            \multicolumn{3}{@{}l@{}}{\hspace*{-40pt}\ulenhance[1.2pt]{\ulextend[335pt]{\zihao{-3}\bfseries\songti \ucas@value@ch@degree}}} \\
             
-            \makebox[65pt][s]{\zihao{4}\bfseries\sffamily 学科专业} & 
-            \multicolumn{3}{@{}l@{}}{\hspace*{-40pt}\ulenhance[1.2pt]{\ulextend[335pt]{\zihao{4}\bfseries\sffamily \ucas@value@ch@major}}} \\
+            \makebox[65pt][s]{\zihao{-3}\bfseries\songti 学科专业} & 
+            \multicolumn{3}{@{}l@{}}{\hspace*{-40pt}\ulenhance[1.2pt]{\ulextend[335pt]{\zihao{-3}\bfseries\songti \ucas@value@ch@major}}} \\
             
-            \makebox[65pt][s]{\zihao{4}\bfseries\sffamily 研究方向} & 
-            \multicolumn{3}{@{}l@{}}{\hspace*{-40pt}\ulenhance[1.2pt]{\ulextend[335pt]{\zihao{4}\bfseries\sffamily \ucas@value@ch@researcharea}}} \\
+            \makebox[65pt][s]{\zihao{-3}\bfseries\songti 研究方向} & 
+            \multicolumn{3}{@{}l@{}}{\hspace*{-40pt}\ulenhance[1.2pt]{\ulextend[335pt]{\zihao{-3}\bfseries\songti \ucas@value@ch@researcharea}}} \\
             
             % --- 研究所  ---
-            \makebox[110pt][s]{\zihao{4}\bfseries\sffamily 研究所（院系）} & 
-            \multicolumn{3}{@{}l@{}}{\hspace*{-2pt}\ulenhance[1.2pt]{\ulextend[295pt]{\zihao{4}\bfseries\sffamily \ucas@value@ch@institute}}} \\
+            \makebox[110pt][s]{\zihao{-3}\bfseries\songti 研究所（院系）} & 
+            \multicolumn{3}{@{}l@{}}{\hspace*{-2pt}\ulenhance[1.2pt]{\ulextend[295pt]{\zihao{-3}\bfseries\songti \ucas@value@ch@institute}}} \\
             
-            \makebox[65pt][s]{\zihao{4}\bfseries\sffamily 填表日期} & 
-            \multicolumn{3}{@{}l@{}}{\hspace*{-40pt}\ulenhance[1.2pt]{\ulextend[335pt]{\zihao{4}\bfseries\sffamily \ucas@value@ch@date}}} \\
+            \makebox[65pt][s]{\zihao{-3}\bfseries\songti 填表日期} & 
+            \multicolumn{3}{@{}l@{}}{\hspace*{-40pt}\ulenhance[1.2pt]{\ulextend[335pt]{\zihao{-3}\bfseries\songti \ucas@value@ch@date}}} \\
         \end{tabular}
 
         \vspace*{\stretch{1}}
-        {\zihao{3}\bfseries\sffamily 中国科学院大学制}
+        {\zihao{3}\bfseries\songti 中国科学院大学制}
         \vspace*{\stretch{1}}
     \end{center}
     \clearpage
